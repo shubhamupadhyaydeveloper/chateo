@@ -4,17 +4,15 @@ import { MediaStream, RTCView } from 'react-native-webrtc';
 interface VideoStreamViewProps {
     stream: MediaStream | null;
     remoteStream: MediaStream | null;
-    localWebcamOn: boolean;
 }
 
 const VideoStreamView: React.FC<VideoStreamViewProps> = ({
     stream,
     remoteStream,
-    localWebcamOn,
 }) => {
     return (
         <>
-            {!remoteStream && localWebcamOn && stream && (
+            {!remoteStream && stream && (
                 <RTCView
                     style={{ flex: 1 }}
                     streamURL={stream?.toURL()}
@@ -30,7 +28,7 @@ const VideoStreamView: React.FC<VideoStreamViewProps> = ({
                         objectFit={'cover'}
                         mirror={true}
                     />
-                    {stream && localWebcamOn && (
+                    {stream && (
                         <RTCView
                             streamURL={stream?.toURL()}
                             style={{

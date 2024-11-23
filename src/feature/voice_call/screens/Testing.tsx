@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import {
     Button,
@@ -69,7 +67,6 @@ const styles = StyleSheet.create({
     footer: {
         display : 'flex',
         gap : 10,
-        // backgroundColor: 'skyblue',
         position: 'absolute',
         bottom: 10,
         left: 0,

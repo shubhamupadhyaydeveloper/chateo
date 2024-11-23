@@ -9,7 +9,7 @@ const SplashScreen = () => {
 
   useEffect(() => {
     setTimeout(() => {
-        resetAndNavigate('HomeScreen');
+        resetAndNavigate('AppScreen');
     },2500)
   },[])
   return (

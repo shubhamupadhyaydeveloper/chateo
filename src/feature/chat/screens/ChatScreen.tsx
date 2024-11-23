@@ -35,7 +35,6 @@ const ChatScreen = () => {
     const socket = io('http://192.168.1.110:4000', {
       query: {
         userId,
-        callerId: 1234
       },
     });
     setSocketState(socket);
@@ -97,7 +96,7 @@ const ChatScreen = () => {
       </View>
 
      <ImageBackground
-        source={require('../../assets/images/chatbg.jpg')}
+        source={require('../../../../assets/images/chatbg.jpg')}
         style={{flex : 1}}
       >
 
