@@ -1,6 +1,6 @@
 import { View, Text, StatusBar, TextInput, TouchableWithoutFeedback, Modal, TouchableOpacity, TouchableWithoutFeedbackBase } from 'react-native'
 import React, { memo, useState } from 'react'
-import CustomHeader from '../../../shared/CustomHeader';
+import CustomHeader from '../../../../storybook/stories/CustomHeader/CustomHeader';
 import FontistoIcon from 'react-native-vector-icons/Fontisto'
 import { screenHeight, screenWidth } from '../../../utils/responsive';
 import Animated, { runOnJS, SlideInUp, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';

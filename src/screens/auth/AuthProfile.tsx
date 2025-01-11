@@ -12,7 +12,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 import { screenHeight, screenWidth } from '../../utils/responsive';
-import CustomButton from '../../shared/CustomButton';
+import CustomButton from '../../../storybook/stories/CustomButton/CustomButton';
 import { navigate, resetAndNavigate } from '../../utils/navigationutils';
 import { mmkvStorage } from '../../store/mmkv';
 

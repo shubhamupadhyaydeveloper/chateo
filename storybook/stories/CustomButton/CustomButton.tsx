@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { screenWidth } from '../utils/responsive';
+import { screenWidth } from '../../../src/utils/responsive';
 
 const CustomButton = ({ title, onPress }: { title: string, onPress?: () => void }) => {
     return (

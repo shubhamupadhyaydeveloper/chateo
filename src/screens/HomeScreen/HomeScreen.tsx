@@ -63,15 +63,6 @@ const HomeScreen = () => {
             <UserRenderHomepage index={index} contentLength={userData.length} item={item} handleProfileClick={handleProfileClick} randomIndex={randomIndex} />
         )}
       />
-      {/* <View style={{ alignSelf: 'center', width: width * .6, marginTop: screenHeight * .2 }}>
-        <TouchableWithoutFeedback onPress={() => navigate('VideoCallScreen')}>
-          <View style={{ padding: 15, borderRadius: 8, alignItems: 'center', justifyContent: 'center', backgroundColor: 'white' }}>
-            <Text style={{ color: 'black' }}>test stream</Text>
-          </View>
-        </TouchableWithoutFeedback>
-      </View> */}
-
-
       <View className='absolute' style={{ right: screenWidth * .07, width: 53, height: 53, backgroundColor: "#00AA82", bottom: screenHeight * .15, borderRadius: 15 }}>
         <TouchableOpacity activeOpacity={.85} onPress={() => navigate('AddContact')}>
           <View style={{ justifyContent: 'center', alignItems: 'center', alignSelf: 'center', width: '100%', height: '100%' }}>

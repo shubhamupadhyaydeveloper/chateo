@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Svg, { Rect } from 'react-native-svg';
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, runOnJS } from 'react-native-reanimated';
-import { screenWidth } from '../../../../utils/responsive';
+import { screenWidth } from '../../../utils/responsive';
 
 const ProgressLine = ({ length }: { length: number }) => {
     const height = 2;

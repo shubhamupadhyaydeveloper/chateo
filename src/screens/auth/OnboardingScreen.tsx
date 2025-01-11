@@ -3,7 +3,7 @@ import React, { memo, useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { onboardingImage } from '../../utils/images';
 import { screenHeight, screenWidth } from '../../utils/responsive';
-import CustomButton from '../../shared/CustomButton';
+import CustomButton from '../../../storybook/stories/CustomButton/CustomButton';
 import { navigate } from '../../utils/navigationutils'
 import Animated, { useAnimatedScrollHandler, useSharedValue, runOnJS, useAnimatedStyle, interpolate, Extrapolation, withSpring, useDerivedValue } from 'react-native-reanimated';
 

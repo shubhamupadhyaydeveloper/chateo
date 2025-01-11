@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { screenHeight, screenWidth } from '../../../utils/responsive';
 import { countryImage } from '../../../utils/images';
 import ContryModal from './component/CountryModal';
-import CustomButton from '../../../shared/CustomButton';
+import CustomButton from '../../../../storybook/stories/CustomButton/CustomButton';
 import { navigate } from '../../../utils/navigationutils';
 import { useNumberFormHandler } from './forms/numberform';
 
