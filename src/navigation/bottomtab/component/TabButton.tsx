@@ -6,6 +6,7 @@ import Animated, {
     useSharedValue,
     withTiming,
     Easing,
+    withSpring,
 } from 'react-native-reanimated';
 
 const { width } = Dimensions.get('window');
@@ -23,18 +24,19 @@ const TabBarButton = (props: any) => {
         };
     });
 
+
     const handleAnimation = () => {
         if (focused) {
-            sharedWidth.value = withTiming(65, {
-                duration: 230,
-                easing: Easing.out(Easing.quad),
+            sharedWidth.value = withSpring(65, {
+                damping: 80,
+                stiffness: 200,
             });
             sharedOpacity.value = withTiming(1, { duration: 230 });
         } else {
-            sharedWidth.value = withTiming(20, {
-                duration: 150,
-                easing: Easing.out(Easing.quad),
-            })
+            sharedWidth.value = withSpring(20, {
+                damping: 80,
+                stiffness: 200,
+            });
             sharedOpacity.value = withTiming(0, { duration: 150 });
         }
     };
@@ -47,14 +49,14 @@ const TabBarButton = (props: any) => {
         <TouchableWithoutFeedback onPress={onPress}>
             <View style={styles.container}>
                 <Animated.View
-                    className="absolute rounded-full bg-white/90"
+                    className="absolute rounded-full bg-[#003728]"
                     style={[{ height: 32, top: 10 }, animatedStyle]}
                 />
                 <View className="relative">
                     <Icon
                         type={item.type}
                         name={focused ? item.activeIcon : item.inActiveIcon}
-                        color={focused ? 'green' : 'white'}
+                        color={focused ? '#CEFECE' : 'white'}
                         size={item.size}
                     />
                 </View>
@@ -62,7 +64,7 @@ const TabBarButton = (props: any) => {
                     style={[
                         styles.label,
                         {
-                            color: focused ? 'green' : 'white',
+                            color: "white",
                             fontWeight: focused ? '800' : '400',
                             marginTop: 7,
                         },

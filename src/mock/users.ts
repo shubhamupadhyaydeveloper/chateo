@@ -1,5 +1,16 @@
 export const userData = [
   {name: 'suraj', userId: 1234},
   {name: 'my_pc', userId: 5678},
-  {name: 'shubham',userId : 7070}
+  {name: 'shubham',userId : 7070},
+  {name: 'raju(bhai)',userId : 7071},
+  {name: 'gaurav',userId : 7072},
+  {name: 'shivam panday',userId : 7073},
+  {name: 'shubham(ba)',userId : 7074},
+  {name: 'rajan new',userId : 7075},
+  {name: 'react sir',userId : 7076},
+  {name: 'himanshu',userId : 7077},
+  {name: 'pratap',userId : 7078},
+  {name: 'gautam',userId : 7079},
+  {name: 'kishore',userId : 70709},
+  {name: 'lahore',userId : 70700},
 ];

@@ -24,3 +24,9 @@ export const resetAndNavigate = (routeName: string) => {
     );
   }
 };
+export const goBackNavigate = () => {
+  navigationRef.isReady();
+  if (navigationRef.isReady()) {
+    navigationRef.goBack()
+  }
+};

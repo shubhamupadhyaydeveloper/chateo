@@ -1,19 +1,27 @@
-import {View, Text, StatusBar, Dimensions} from 'react-native';
+import { View, Text, StatusBar, Dimensions, ActivityIndicator } from 'react-native';
 import React, { useEffect } from 'react';
 import LottieView from 'lottie-react-native';
-import { resetAndNavigate } from '../utils/navigationutils';
+import { navigate, resetAndNavigate } from '../utils/navigationutils';
+import { mmkvStorage } from '../store/mmkv';
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 const SplashScreen = () => {
 
+  const isValidUser = mmkvStorage.getItem('id');
+
   useEffect(() => {
     setTimeout(() => {
-        resetAndNavigate('AppScreen');
-    },2500)
-  },[])
+      if (isValidUser) {
+        resetAndNavigate('AppMainScreen');
+      } else {
+        resetAndNavigate('AuthScreen');
+      }
+    }, 2500);
+  }, [isValidUser]);
+
   return (
-    <View style={{width, height: '100%', backgroundColor: 'black'}}>
+    <View style={{ width, height: '100%', backgroundColor: 'black' }}>
       <StatusBar
         translucent
         backgroundColor={'transparent'}
@@ -24,26 +32,21 @@ const SplashScreen = () => {
           height: '100%',
           width: '100%',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'space-evenly',
         }}>
-        <LottieView
-          style={{width: width * 0.8, height: height * 0.5}}
-          autoPlay
-          duration={2300}
-          source={require('../../assets/lottie/splash.json')}
-          loop={false}
-        />
-        <Text
-          style={{
-            color: 'white',
-            fontSize: 20,
-            fontWeight: 'bold',
-            position: 'absolute',
-            bottom: height * 0.38,
-            fontFamily: 'Poppins-Bold',
-          }}>
-          Chateo
-        </Text>
+        <View className="items-center justify-center">
+          <LottieView
+            style={{ width: width * 0.8, height: height * 0.5 }}
+            autoPlay
+            duration={2300}
+            source={require('../../assets/lottie/splash.json')}
+            loop={false}
+          />
+        </View>
+        <View>
+          <ActivityIndicator size={35} color={'#00AA82'} />
+          <Text className="text-white font-semibold mt-[20px]">Powered by React Native</Text>
+        </View>
       </View>
     </View>
   );

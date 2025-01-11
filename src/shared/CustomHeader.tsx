@@ -1,9 +1,10 @@
 import { View, Text, Dimensions, TouchableOpacity } from 'react-native'
 import React from 'react'
 import AntDesignIcon from 'react-native-vector-icons/Ionicons';
+import EntypoIcon from "react-native-vector-icons/Entypo"
 
 const {width,height} = Dimensions.get('window')
-const CustomHeader = () => {
+const CustomHeader = ({ title, onModalOpen }: { title?: string, onModalOpen?:() => void}) => {
   return (
       <View
           style={{
@@ -11,23 +12,26 @@ const CustomHeader = () => {
               display: 'flex',
               flexDirection: 'row',
               justifyContent: 'space-between',
-              paddingHorizontal: 15,
+            //   paddingHorizontal: 15,
               alignItems: 'center',
               paddingTop: height * 0.025,
-              backgroundColor: '#1a1e26',
+              backgroundColor: 'black',
               paddingBottom: height * .015
           }}>
           <Text
               style={{
                   color: 'white',
-                  fontSize: 18,
-                  fontWeight: '600',
+                  fontSize: 20,
+                  fontWeight: title ? "500" : '900',
               }}>
-              Chateo
+              {title ? title : "Chateo"}
           </Text>
-          <View>
+          <View className='flex flex-row gap-[10px] items-center'>
               <TouchableOpacity activeOpacity={0.75}>
-                  <AntDesignIcon name="search" color={'white'} size={23} />
+                  <AntDesignIcon name="camera-outline" color={'white'} size={25} />
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.75} onPress={onModalOpen}>
+                  <EntypoIcon name="dots-three-vertical" color={'white'} size={18} />
               </TouchableOpacity>
           </View>
       </View>

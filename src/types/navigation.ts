@@ -7,11 +7,29 @@ export type stackNavigationType = {
     image: string;
   };
   UserScreen: undefined;
-  SplashScreen: undefined;
   AddContact: undefined;
   Testing: undefined;
   VideoCallScreen: undefined;
   JoinCall: undefined;
+  ProfileDetail: {
+    name: string;
+    profileImage: string;
+  };
+  ProfileImage: {
+    sharedTag:string;
+    image : string
+  };
+  StatusContent : {
+    index:number
+  };
+  SearchScreen : undefined
+};
+
+export type authNavigationType = {
+  Onboarding: undefined;
+  EnterNumber:undefined;
+  EnterCode:undefined;
+  AuthProfile:undefined;
 };
 
 export type BottomTabNavigation = {

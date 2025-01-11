@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React, { useEffect, useRef } from 'react'
 import { BottomTabNavigation } from '../../types/navigation';
-import { tabNavigtionData } from '../../utils/mock';
+import { tabNavigtionData } from '../../mock/mock';
 import TabBarButton from './component/TabButton';
 
 const BottomTabStack = () => {
@@ -16,7 +16,7 @@ const BottomTabStack = () => {
         borderTopWidth: 0,
         elevation: 0,
         shadowOpacity: 0,
-        backgroundColor: '#152033',
+        backgroundColor: 'black',
         height: 75
       },
       tabBarIconStyle: {
