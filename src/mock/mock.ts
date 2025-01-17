@@ -2,8 +2,8 @@ import HomeScreen from '../screens/HomeScreen/HomeScreen';
 
 import {Icons} from '../utils/Icons';
 import {BottomTabNavigation} from '../types/navigation';
-import StatusScreen from '../feature/status/screens';
-import CommunityScreen from '../feature/community/screens';
+import StatusScreen from '../feature/status/screens/StatusScreen';
+import CommunityScreen from '../feature/community/screens/CommunityScreen';
 import CallScreen from '../feature/voice_call/Call';
 
 export const ProfileDetailOption = [

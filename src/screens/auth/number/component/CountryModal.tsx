@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native'
 import React, { useCallback, useEffect } from 'react'
-import CustomModal from '../../../../../storybook/stories/CustomModal/CustomModal';
+import CustomModal from '../../../../shared/CustomModal';
 import { screenHeight, screenWidth } from '../../../../utils/responsive';
 import { FlashList } from '@shopify/flash-list';
 import { countryOptions } from '../../../../mock/mock';

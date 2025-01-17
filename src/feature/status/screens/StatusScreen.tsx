@@ -6,12 +6,12 @@ import { navigate } from '../../../utils/navigationutils';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import { useIsFocused } from '@react-navigation/native';
-import CustomHeader from '../../../../storybook/stories/CustomHeader/CustomHeader';
+import CustomHeader from '../../../shared/CustomHeader';
 import { statusData } from '../../../mock/mock';
 import { FlashList } from '@shopify/flash-list';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import Svg, { Circle, Rect, Polygon, Line, Path } from 'react-native-svg';
-import StatusCircle from '../component/StatusCircle';
+import StatusCircle from './component/StatusCircle';
 
 const StatusScreen = () => {
   const sharedCreateBottom = useSharedValue(screenHeight * 0.2);

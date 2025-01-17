@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
-import ProgressLine from '../component/ProgressLine';
+import ProgressLine from './component/ProgressLine';
 import { stackNavigationType } from '../../../types/navigation';
 import { statusData } from '../../../mock/mock';
 import { screenHeight, screenWidth } from '../../../utils/responsive';
@@ -13,7 +13,7 @@ import {
   GestureDetector,
   GestureHandlerRootView,
 } from 'react-native-gesture-handler';
-import CustomLiked from '../../../../storybook/stories/CustomLiked/CustomLiked';
+import CustomLiked from '../../../shared/CustomLiked';
 
 const StatusContent = () => {
   const route = useRoute<RouteProp<stackNavigationType, 'StatusContent'>>();

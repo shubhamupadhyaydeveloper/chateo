@@ -11,7 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { screenHeight, screenWidth } from '../../utils/responsive';
-import CustomButton from '../../../storybook/stories/CustomButton/CustomButton';
+import CustomButton from '../../shared/CustomButton';
 import {
   CodeField,
   Cursor,

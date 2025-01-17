@@ -1,10 +1,10 @@
 import { View, Text, Image } from 'react-native';
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import CustomHeader from '../../../../storybook/stories/CustomHeader/CustomHeader';
+import CustomHeader from '../../../shared/CustomHeader';
 import { FieldValues, useForm } from 'react-hook-form';
-import CustomInput from '../../../../storybook/stories/CustomInput/CustomInput';
-import CustomButton from '../../../../storybook/stories/CustomButton/CustomButton';
+import CustomInput from '../../../shared/CustomInput';
+import CustomButton from '../../../shared/CustomButton';
 
 
 const CommunityScreen = () => {

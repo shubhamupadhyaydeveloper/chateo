@@ -7,7 +7,7 @@ import Animated, {
     withSequence,
     withSpring,
 } from 'react-native-reanimated';
-import { screenHeight } from '../../../src/utils/responsive';
+import { screenHeight } from '../utils/responsive';
 
 
 type props = {
@@ -29,7 +29,7 @@ const CustomLiked = ({ title }: props) => {
         {
             pressed === false &&
                 (scaleShared.value = withSequence(
-                    withSpring(.8, { damping: 15, stiffness: 200 }),
+                    withSpring(.8,{damping : 15,stiffness : 200}),
                     withSpring(1.2, { damping: 15, stiffness: 200 }),
                     withSpring(1, { damping: 15, stiffness: 200 }),
                 ));

@@ -2,14 +2,14 @@ import { View, Text } from 'react-native';
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { stackNavigationType } from '../../types/navigation';
-import ChatScreen from '../../feature/chat/screens';
-import AddContacts from '../../feature/contact/screens';
+import ChatScreen from '../../feature/chat/screens/ChatScreen';
+import AddContacts from '../../feature/contact/screens/AddContacts';
 import VideoCallView from '../../feature/voice_call/components/VideoCallView';
 import BottomTabStack from '../bottomtab/bottomtab';
 import ProfileDetail from '../../screens/profile/ProfileDetail';
 import ProfileImage from '../../screens/HomeScreen/profile/ProfileImage';
 import StatusContent from '../../feature/status/screens/StatusContent';
-import SearchPage from '../../feature/search';
+import SearchPage from '../../feature/search/SearchPage';
 
 
 const StackNavigator = () => {

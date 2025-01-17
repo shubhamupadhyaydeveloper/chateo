@@ -1,5 +1,4 @@
 import { SharedTransition, withSpring } from "react-native-reanimated";
-import {Dimensions} from 'react-native';
 
 export  const bouncyTransition = SharedTransition.custom(values => {
   'worklet';
@@ -11,5 +10,3 @@ export  const bouncyTransition = SharedTransition.custom(values => {
     borderRadius: withSpring(values.targetBorderRadius,{damping : 80,stiffness : 350}),
   };
 });
-
-

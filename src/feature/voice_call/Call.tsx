@@ -7,7 +7,7 @@ import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 import { TouchableOpacity } from 'react-native';
 import { mmkvStorage } from '../../store/mmkv';
 import { navigate, resetAndNavigate } from '../../utils/navigationutils';
-import CustomHeader from '../../../storybook/stories/CustomHeader/CustomHeader';
+import CustomHeader from '../../shared/CustomHeader';
 import { screenHeight, screenWidth } from '../../utils/responsive';
 const { width, height } = Dimensions.get('window')
 
