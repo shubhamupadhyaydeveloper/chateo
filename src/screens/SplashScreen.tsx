@@ -11,14 +11,12 @@ const SplashScreen = () => {
   const isValidUser = mmkvStorage.getItem('id');
 
   useEffect(() => {
-    setTimeout(() => {
-      if (isValidUser) {
-        resetAndNavigate('AppMainScreen');
-      } else {
+     setTimeout(() => {
         resetAndNavigate('AuthScreen');
-      }
     }, 2500);
-  }, [isValidUser]);
+
+    // return clearTimeout(timeOut)
+  }, []);
 
   return (
     <View style={{ width, height: '100%', backgroundColor: 'black' }}>

@@ -15,11 +15,30 @@ import { screenHeight, screenWidth } from '../../utils/responsive';
 import CustomButton from '../../shared/CustomButton';
 import { navigate, resetAndNavigate } from '../../utils/navigationutils';
 import { mmkvStorage } from '../../store/mmkv';
+import { supabaseClient } from '../../utils/supabase';
 
 const AuthProfile = () => {
     const navigation = useNavigation();
-    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = async () => {
+        try {
+            const { data } = await supabaseClient.auth.signUp({
+                email: email,
+                password: password,
+            })
+
+            console.log('this is data', data)
+        } catch (error: any) {
+            throw new Error("Error in signUp authProfile")
+        } finally {
+            setPassword('');
+            setEmail('');
+            setFirstName('');
+        }
+    }
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -64,7 +83,7 @@ const AuthProfile = () => {
 
                                     }}
                                     value={firstName}
-                                    placeholder="First Name (required)"
+                                    placeholder="Username Enter here"
                                     placeholderTextColor={'#A6A5A5'}
                                     onChangeText={setFirstName}
                                     keyboardType="phone-pad"
@@ -88,10 +107,35 @@ const AuthProfile = () => {
                                         width: screenWidth * 0.8,
 
                                     }}
-                                    value={lastName}
-                                    placeholder="Last Name (optional)"
+                                    value={email}
+                                    placeholder="Enter Email here"
                                     placeholderTextColor={'#A6A5A5'}
-                                    onChangeText={setLastName}
+                                    onChangeText={setEmail}
+                                    keyboardType="phone-pad"
+                                />
+                            </View>
+                            <View
+                                style={{
+                                    paddingHorizontal: 10,
+                                    paddingVertical: 3,
+                                    borderRadius: 10,
+                                    backgroundColor: '#3C474F',
+                                    shadowColor: '#000',
+                                    shadowOffset: { width: 0, height: 4 },
+                                    shadowOpacity: 0.1,
+                                    shadowRadius: 4,
+                                    elevation: 5,
+                                }}>
+                                <TextInput
+                                    style={{
+                                        color: 'white',
+                                        width: screenWidth * 0.8,
+
+                                    }}
+                                    value={password}
+                                    placeholder="Enter Password here"
+                                    placeholderTextColor={'#A6A5A5'}
+                                    onChangeText={setPassword}
                                     keyboardType="phone-pad"
                                 />
                             </View>
@@ -99,11 +143,8 @@ const AuthProfile = () => {
 
                     </View>
 
-                    <View className='self-center mb-[35px]'  >
-                        <CustomButton title="Save" onPress={() => {
-                             mmkvStorage.setItem('id','1234')
-                            resetAndNavigate('AppMainScreen')
-                        }} />
+                    <View className='self-center mb-[35px]'>
+                        <CustomButton title="Save" onPress={handleSubmit} />
                     </View>
                 </View>
 

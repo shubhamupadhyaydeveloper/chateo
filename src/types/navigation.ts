@@ -22,7 +22,10 @@ export type stackNavigationType = {
   StatusContent : {
     index:number
   };
-  SearchScreen : undefined
+  SearchScreen : undefined,
+  MotiAnimation : undefined;
+  Reanimated:undefined;
+  Carousel:undefined
 };
 
 export type authNavigationType = {

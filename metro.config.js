@@ -1,5 +1,6 @@
-const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
-const {withNativeWind} = require('nativewind/metro');
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
+const { withNativeWind } = require('nativewind/metro');
+const { wrapWithReanimatedMetroConfig } = require('react-native-reanimated/metro-config');
 
 /**
  * Metro configuration
@@ -7,8 +8,19 @@ const {withNativeWind} = require('nativewind/metro');
  *
  * @type {import('metro-config').MetroConfig}
  */
-const config = mergeConfig(getDefaultConfig(__dirname), {
+const defaultConfig = getDefaultConfig(__dirname);
 
+
+const baseConfig = mergeConfig(defaultConfig, {
+ 
 });
 
-module.exports = withNativeWind(config, {input: './global.css'});
+const configWithNativeWind = withNativeWind(baseConfig, {
+  input: './global.css', 
+});
+
+
+const finalConfig = wrapWithReanimatedMetroConfig(configWithNativeWind);
+
+module.exports = finalConfig;
+
